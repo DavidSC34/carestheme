@@ -1,4 +1,12 @@
 <?php
+/**
+ * agregar CMB2_Field
+ */
+require_once dirname(__FILE__) . '/cmb2.php';
+
+//Carga campos personalizados
+
+require_once dirname(__FILE__) . '/inc/custom-fields.php';
 
 /***
  * funciones que se cargan al activar el tema
