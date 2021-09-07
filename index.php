@@ -1,50 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-   
-
-    <link rel="stylesheet" href="/css/styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WBC Cares </title>
-    <?php wp_head();?>
-</head>
-
-<body>
-    <header class="header-cares">
-        <div class="navbar-fixed">
-            <nav class=" z-depth-0">
-                <div class="nav-wrapper">
-                    <a href="index.php" class="brand-logo left"><img class="header-cares--logo" src="/imgs/Logo-OUT.svg"  alt="Logo WBC Cares" onmouseover="this.src='imgs/Logo-OVER.svg';" onmouseout="this.src='imgs/Logo-OUT.svg';" /></a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a class="links" href="about.php">About us</a></li>
-                        <li><a class="links" href="stories.php">Stories</a></li>
-                        <li><a class="links" href="ambassadors.php">Ambassadors</a></li>
-                        <li><a class="links" href="affiliated.php">Affiliated</a></li>
-                        <li><a class="links" href="gallery.php">Gallery</a></li>
-                        <li><a class="links" href="contact.php">Join</a></li>
-                        <li><a class="waves-effect waves-light btn" href="https://www.paypal.me/wbccares" target="_blank">Donate</a></li>
-                    </ul>
-                    <a href="#" data-target="slide-out" class="right sidenav-trigger show-on-medium-and-down"><i class="material-icons">menu</i></a>
-                </div>
-            </nav>
-        </div>
-        <ul id="slide-out" class="sidenav">
-            <li>
-                <div class="contain-menu">
-                    <img src="/imgs/logo-out.png" width="90" />
-                    <a class="sidenav-close" href="#!">Close</a>
-                </div>
-            </li>
-            <li><a class="waves-effect" href="about.php">About</a></li>
-            <li><a class="waves-effect" href="stories.php">Stories</a></li>
-            <li><a class="waves-effect" href="contact.php">Contact</a></li>
-            <li><a class="waves-effect" href="https://www.paypal.me/wbccares">Donate</a></li>
-        </ul>
-    </header>
+<?php get_header(); ?>
 <section class="section hero valign-wrapper">
   <div class="container">
     <div class="row">
@@ -152,44 +106,38 @@
     </div>
   </div>
 </section>
-
-<!-- <footer class="footer-cares"></footer> -->
-<footer class="page-footer footer-cares">
-    <div class="container">
-        <div class="row">
-            <div class="col l6 s12 contenido-footer">
-                <h5 class="white-text">WBC CARES</h5>
-                <p class="grey-text text-lighten-4">A non profit organization of the World Boxing Council made up of compassionate volunteers to inspire by example.</p>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m7">
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+            <h2 class="header"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+            <div class="card horizontal">
+              <div class="card-image">
+                <?php if (has_post_thumbnail()) {
+                  the_post_thumbnail('post-thumbnails', array('class' => 'responsive-img'));
+                }
+                ?>
+              </div>
+              <div class="card-stacked">
+                <div class="card-content">
+                  <p><?php the_excerpt(); ?></p>
+                </div>
+                <div class="card-action">
+                  <a href="<?php the_permalink(); ?>">Read more</a>
+                </div>
+              </div>
             </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <nav>
-                    <div class="nav-wrapper sociales contenido-footer">
+        <?php endwhile;
+        endif; ?>
 
-                        <ul class="left ">
-                            <li><a href="https://www.facebook.com/wbccares"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="https://www.twitter.com/@wbccares"><i class="fab fa-twitter-square"></i></a></li>
-                            <li><a href="https://www.instagram.com/wbccares/"><i class="fab fa-instagram-square"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/jill-diamond-chastain-5701844/"><i class="fab fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-            <!--.col l4-->
-        </div>
+      </div>
     </div>
-    <div class="footer-copyright">
-        <div class="container">
-            © <?php echo date('Y'); ?> World Boxing Council
-            <a class="grey-text text-lighten-4 right" href="https://wbcboxing.com/">WBC</a>
-        </div>
+    <div class="row">
+      <div class="col s12 m7">
+        <?php get_template_part('template-parts/content', 'paginacion'); ?>
+      </div>
     </div>
-</footer>
-<!-- Compiled and minified JavaScript -->
-
-<script src="https://kit.fontawesome.com/97f6e04dbb.js" crossorigin="anonymous"></script>
-<script src="/js/main.js"></script>
-<?php wp_footer();?
-</body>
-
-</html>
+  </div>
+</section>
+<?php get_footer(); ?>
