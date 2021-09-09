@@ -44,14 +44,54 @@ function cares_campos_homepage()
 		'id'   => $prefix . 'video_title',
 		'type' => 'text',
 	));
+	$cares_campos_homepage->add_field( array(
+		'name' => esc_html__( 'Intro Video ', 'cmb2' ),
+		'desc' => esc_html__( 'Upload a video ( 10 seconds duration)', 'cmb2' ),
+		'id'   => $prefix . 'video_intro',
+		'type' => 'file',
+	) );
+	$cares_campos_homepage->add_field( array(
+		'name' => esc_html__( 'Full Video ', 'cmb2' ),
+		'desc' => esc_html__( 'Upload a video ( full video - 1 minute duration)', 'cmb2' ),
+		'id'   => $prefix . 'video_full',
+		'type' => 'file',
+	) );
 
-	// $cares_campos_homepage->add_field(array(
-	// 	'name'    => esc_html__('Video Section Title', 'cmb2'),
-	// 	'desc'    => esc_html__('Text for video section', 'cmb2'),
-	// 	'id'      => $prefix . 'video_title',
-	// 	'type'    => 'wysiwyg',
-	// 	'options' => array(
-	// 		'textarea_rows' => 5,
-	// 	),
-	// ));
+	$cares_campos_homepage->add_field(array(
+		'name'    => esc_html__('Goal Section Content', 'cmb2'),
+		'desc'    => esc_html__('Text for goal section', 'cmb2'),
+		'id'      => $prefix . 'goal_section',
+		'type'    => 'wysiwyg',
+		'options' => array(
+			'textarea_rows' => 5,
+		),
+	));
+	$cares_campos_homepage->add_field( array(
+		'name' => esc_html__( 'Goal Image', 'cmb2' ),
+		'desc' => esc_html__( 'Upload an image or enter a URL.', 'cmb2' ),
+		'id'   => $prefix . 'goal_image',
+		'type' => 'file',
+	) );
+
+	$cares_campos_homepage->add_field(array(
+		'name' => esc_html__('Believes Section Title ', 'cmb2'),
+		'desc' => esc_html__('Text for belive section', 'cmb2'),
+		'id'   => $prefix . 'believe_title',
+		'type' => 'text',
+	));
+	$cares_campos_homepage->add_field(array(
+		'name'    => esc_html__('Champion Section Content', 'cmb2'),
+		'desc'    => esc_html__('Text for champion section', 'cmb2'),
+		'id'      => $prefix . 'champion_section',
+		'type'    => 'wysiwyg',
+		'options' => array(
+			'textarea_rows' => 5,
+		),
+	));
+	$cares_campos_homepage->add_field( array(
+		'name' => esc_html__( 'Champion Image', 'cmb2' ),
+		'desc' => esc_html__( 'Upload an image or enter a URL.', 'cmb2' ),
+		'id'   => $prefix . 'champion_image',
+		'type' => 'file',
+	) );
 }

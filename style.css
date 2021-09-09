@@ -173,6 +173,7 @@ main {
     height: 100vh;
     min-height: 900px;
     position: relative;
+    color: #fff;
 }
 
 .section-goal--title,
@@ -180,7 +181,14 @@ main {
     color: white;
 }
 
-.section-goal--title {
+.section-goal {
+    font-size: 1rem;
+    line-height: 1.3;
+    font-family: Aktiv-Regular;
+   
+}
+.section-goal h5{
+    max-width:90%;
     font-size: 38px;
     line-height: 1.3;
     letter-spacing: -0.6px;
@@ -188,12 +196,24 @@ main {
     font-weight: 400;
     margin-bottom: 52px;
 }
-
-.section-goal--subtitle {
+/* .section-goal--title {
+    font-size: 38px;
+    line-height: 1.3;
+    letter-spacing: -0.6px;
+    font-family: Begum;
+    font-weight: 400;
+    margin-bottom: 52px;
+} */
+/* .section-goal p{
     font-size: 20px;
     line-height: 1.3;
     font-family: Aktiv-Regular;
-}
+} */
+/* .section-goal--subtitle {
+    font-size: 20px;
+    line-height: 1.3;
+    font-family: Aktiv-Regular;
+} */
 
 .section-goal img {
     width: 75%;
@@ -225,7 +245,14 @@ main {
     height: 100vh;
 }
 
-.section-champion--title {
+.section-champion {
+    font-size: 1rem;
+    line-height: 1.3;
+    font-family: Aktiv-Regular;
+   
+}
+.section-champion h5{
+    max-width:90%;
     font-size: 38px;
     line-height: 1.3;
     letter-spacing: -0.6px;
@@ -233,12 +260,20 @@ main {
     font-weight: 400;
     /* margin-bottom: 52px; */
 }
+/* .section-champion--title {
+    font-size: 38px;
+    line-height: 1.3;
+    letter-spacing: -0.6px;
+    font-family: Begum;
+    font-weight: 400;
+   
+}*/
 
-.section-champion--subtitle {
+/* .section-champion--subtitle {
     font-size: 20px;
     line-height: 1.3;
     font-family: Aktiv-Regular;
-}
+} */
 
 
 /* ABOUT **/
