@@ -35,6 +35,7 @@
                     );
                     wp_nav_menu($args);
                     ?>
+
                     <a href="#" data-target="slide-out" class="right sidenav-trigger show-on-medium-and-down"><i class="material-icons">menu</i></a>
                 </div>
             </nav>

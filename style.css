@@ -114,6 +114,15 @@ main {
     text-decoration: underline;
 }
 
+.donar a {
+    text-decoration: none;
+    color: #000 !important;
+    font-weight: bold !important;
+    text-align: center;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
+
 .hero .btn-involved {
     color: white;
     margin: 3em 0;
@@ -622,12 +631,13 @@ main {
 }
 
 .video-text-play h1 {
-    width: 100%;
+    width: 60%;
     font-family: Begum-Medium;
     color: white;
     padding-bottom: 25px;
     z-index: 3;
     text-align: center;
+    line-height: 5rem;
     margin-bottom: 30px;
 }
 

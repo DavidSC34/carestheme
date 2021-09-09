@@ -1,4 +1,5 @@
 <?php
+
 /**
  * agregar CMB2_Field
  */
@@ -25,10 +26,11 @@ add_action('after_setup_theme', 'cares_setup');
 /**
  *  Agrega la clase 'links'  al menu principal
  */
-function  cares_enlace_class($atts, $item, $args)
+function  cares_enlace_class($atts, $items, $args)
 {
 
         if ($args->theme_location == 'menu_principal') {
+
                 $atts['class'] = 'links'; //--> cuando estemos en las clases agregale links
         }
         return $atts;
@@ -46,7 +48,7 @@ function cares_agregrar_css_js()
         wp_enqueue_script('materialize-js', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js', array('jquery'), '1.0', true);
         wp_enqueue_script('fontawesome-js', 'https://kit.fontawesome.com/97f6e04dbb.js', array('materialize-js'), '5.0', true);
         wp_enqueue_script('custome-js', get_template_directory_uri() . '/js/main.js', array('fontawesome-js'), '1.0', true);
-        wp_enqueue_script('video-js', get_template_directory_uri() . '/js/video.js', array('custome-js'), '1.0', true);
+        // wp_enqueue_script('video-js', get_template_directory_uri() . '/js/video.js', array('custome-js'), '1.0', true);
 }
 
 add_action('wp_enqueue_scripts', 'cares_agregrar_css_js');
