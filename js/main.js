@@ -11,4 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     var scrollSpy = document.querySelectorAll('.scrollspy');
     var scroll = M.ScrollSpy.init(scrollSpy, optionScroll);
+
+    //Imagnes de galeria 
+    var imgs = document.querySelectorAll('.materialboxed');
+    var optionsImgs = {
+        inDuration: 250,
+        
+    };
+    var instances = M.Materialbox.init(imgs, optionsImgs);
 });

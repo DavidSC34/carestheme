@@ -67,6 +67,7 @@ main {
 .header-cares nav {
     padding: 0.5em 2em 0.4em 2em;
     background-color: #d4d4d4;
+    
 }
 
 .header-cares--logo {
@@ -303,6 +304,10 @@ main {
     padding-top: 8em;
 }
 
+/* GALLERY*/
+image.materialboxed{
+    padding: 1rem;
+}
 
 /* Flag y hands*/
 

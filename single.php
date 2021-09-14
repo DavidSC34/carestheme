@@ -3,9 +3,9 @@
     <div class="row story-entry">
         <div class="col s12 m12 l12 xl12">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                    <div class="card-panel story-content">
+                    <div class="card-panel z-depth-4 story-content ">
                         <?php if (has_post_thumbnail()) {
-                            the_post_thumbnail('mediano', array('class' => 'responsive-img'));
+                            the_post_thumbnail('full', array('class' => 'responsive-img'));
                         }
                         ?>
                         <h4><?php the_title(); ?></h4>
@@ -16,7 +16,7 @@
                             Tags: <?php the_tags('', ' / ', ''); ?>
 
                         </p> -->
-                        <p><?php the_content(); ?></p>
+                        <p class="left-align"><?php the_content(); ?></p>
                     </div>
             <?php endwhile;
             endif; ?>

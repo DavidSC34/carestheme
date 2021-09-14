@@ -131,3 +131,31 @@ function cares_campos_blog()
 		'type' => 'text',
 	));
 }
+
+add_action('cmb2_admin_init', 'cares_campos_galeria');
+/**
+ * Hook in and add a metabox that only appears on the 'Gallery' page
+ */
+function cares_campos_galeria()
+{
+	$prefix = 'cares_gallery_';
+	$cares_campos_gallery = new_cmb2_box(array(
+		'id'           => $prefix . 'metabox',
+		'title'        => esc_html__('Image Gallery Fields', 'cmb2'),
+		'object_types' => array('page'), // Post type
+		'context'      => 'normal',
+		'priority'     => 'high',
+		'show_names'   => true, // Show field names on the left
+		'show_on'      => array(
+			'key'      => 'page-template',
+			'value'    => 'page-gallery.php'
+		)
+	));
+	$cares_campos_gallery->add_field( array(
+		'name'         => esc_html__( 'Images', 'cmb2' ),
+		'desc'         => esc_html__( 'Upload or add multiple images', 'cmb2' ),
+		'id'           => $prefix . 'images',
+		'type'         => 'file_list',
+		'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
+	) );
+}
