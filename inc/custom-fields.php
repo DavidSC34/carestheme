@@ -44,18 +44,18 @@ function cares_campos_homepage()
 		'id'   => $prefix . 'video_title',
 		'type' => 'text',
 	));
-	$cares_campos_homepage->add_field( array(
-		'name' => esc_html__( 'Intro Video ', 'cmb2' ),
-		'desc' => esc_html__( 'Upload a video ( 10 seconds duration)', 'cmb2' ),
+	$cares_campos_homepage->add_field(array(
+		'name' => esc_html__('Intro Video ', 'cmb2'),
+		'desc' => esc_html__('Upload a video ( 10 seconds duration)', 'cmb2'),
 		'id'   => $prefix . 'video_intro',
 		'type' => 'file',
-	) );
-	$cares_campos_homepage->add_field( array(
-		'name' => esc_html__( 'Full Video ', 'cmb2' ),
-		'desc' => esc_html__( 'Upload a video ( full video - 1 minute duration)', 'cmb2' ),
+	));
+	$cares_campos_homepage->add_field(array(
+		'name' => esc_html__('Full Video ', 'cmb2'),
+		'desc' => esc_html__('Upload a video ( full video - 1 minute duration)', 'cmb2'),
 		'id'   => $prefix . 'video_full',
 		'type' => 'file',
-	) );
+	));
 
 	$cares_campos_homepage->add_field(array(
 		'name'    => esc_html__('Goal Section Content', 'cmb2'),
@@ -66,12 +66,12 @@ function cares_campos_homepage()
 			'textarea_rows' => 5,
 		),
 	));
-	$cares_campos_homepage->add_field( array(
-		'name' => esc_html__( 'Goal Image', 'cmb2' ),
-		'desc' => esc_html__( 'Upload an image or enter a URL.', 'cmb2' ),
+	$cares_campos_homepage->add_field(array(
+		'name' => esc_html__('Goal Image', 'cmb2'),
+		'desc' => esc_html__('Upload an image or enter a URL.', 'cmb2'),
 		'id'   => $prefix . 'goal_image',
 		'type' => 'file',
-	) );
+	));
 
 	$cares_campos_homepage->add_field(array(
 		'name' => esc_html__('Believes Section Title ', 'cmb2'),
@@ -88,10 +88,46 @@ function cares_campos_homepage()
 			'textarea_rows' => 5,
 		),
 	));
-	$cares_campos_homepage->add_field( array(
-		'name' => esc_html__( 'Champion Image', 'cmb2' ),
-		'desc' => esc_html__( 'Upload an image or enter a URL.', 'cmb2' ),
+	$cares_campos_homepage->add_field(array(
+		'name' => esc_html__('Champion Image', 'cmb2'),
+		'desc' => esc_html__('Upload an image or enter a URL.', 'cmb2'),
 		'id'   => $prefix . 'champion_image',
 		'type' => 'file',
-	) );
+	));
+}
+
+/* 
+* Metaboxes para el bLOG
+*/
+
+add_action('cmb2_admin_init', 'cares_campos_blog');
+/**
+ * Hook in and add a metabox that only appears on the 'Home' page
+ */
+function cares_campos_blog()
+{
+	$prefix = 'cares_blog_';
+	$id_blog = get_option('page_for_posts');
+
+	/**
+	 * Metabox to be displayed on a single page ID
+	 */
+	$cares_campos_blog = new_cmb2_box(array(
+		'id'           => $prefix . 'blog',
+		'title'        => esc_html__('Blog Page Fields', 'cmb2'),
+		'object_types' => array('page'), // Post type
+		'context'      => 'normal',
+		'priority'     => 'high',
+		'show_names'   => true, // Show field names on the left
+		'show_on'      => array(
+			'id' => array($id_blog),
+		), // Specific post IDs to display this metabox
+	));
+
+	$cares_campos_blog->add_field(array(
+		'name' => esc_html__('Blog Slogan ', 'cmb2'),
+		'desc' => esc_html__('Add slogan text for the stories', 'cmb2'),
+		'id'   => $prefix . 'blog_slogan',
+		'type' => 'text',
+	));
 }

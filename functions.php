@@ -15,6 +15,9 @@ require_once dirname(__FILE__) . '/inc/custom-fields.php';
 
 function cares_setup()
 {
+        //DEfinir tamaños de imagenes
+        add_image_size('mediano', 800, 500, true);
+        add_theme_support('post-thumbnails');
 
         //Menu de navegacion
         register_nav_menus(array(
@@ -55,6 +58,6 @@ add_action('wp_enqueue_scripts', 'cares_agregrar_css_js');
 
 
 //Soporte imagenes destacadas
-if (function_exists('add_theme_support')) {
-        add_theme_support('post-thumbnails');
-}
+// if (function_exists('add_theme_support')) {
+//         add_theme_support('post-thumbnails');
+// }
